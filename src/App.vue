@@ -61,3 +61,10 @@ export default {
     }
 };
 </script>
+
+<style>
+.input-w{
+    width: 95%;
+    max-width: 500px;
+}
+</style>

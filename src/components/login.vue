@@ -1,26 +1,26 @@
 <template>
-<v-app>
     <v-content>
-        <div class="login-form">
-            <v-form v-model="valid" lazy-validation ref="form">
-                <v-text-field label="账号" :counter="10" :rules="nameRules" required></v-text-field>
+        <v-card  class="login-form elevation-12">
+            <div>
+                <v-form v-model="valid" lazy-validation ref="form">
+                    <v-text-field label="账号" :counter="10" :rules="nameRules" required></v-text-field>
 
-                <v-text-field label="密码" :counter="20" :rules="passwordRules" required></v-text-field>
+                    <v-text-field label="密码" :counter="20" :rules="passwordRules" required></v-text-field>
 
-            </v-form>
+                </v-form> 
 
-            <v-btn block @click="submit">登录</v-btn>
-        </div>
+                <v-btn block @click="submit">登录</v-btn>
+            </div>
+        </v-card>
     </v-content>
-</v-app>
 </template>
 
 <script>
-import {login,loginTest} from '../api/loginApi'
+//import {login,loginTest} from '../api/loginApi'
 export default {
     data() {
         return {
-            valid:true,
+            valid: true,
             nameRules: [
                 v => !!v || '请输入账号',
                 v => (v && v.length <= 10) || '账号长度必须小于10',
@@ -31,9 +31,9 @@ export default {
             ]
         }
     },
-    created(){
-        login('1','2')
-        loginTest()
+    created() {
+        //login('1','2')
+        //loginTest()
     },
     methods: {
         submit() {
@@ -46,6 +46,7 @@ export default {
 <style>
 .login-form {
     width: 400px;
-    margin: 0 auto
+    margin: 0 auto;
+    padding: 10px;
 }
 </style>
